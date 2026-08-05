@@ -1,0 +1,40 @@
+{
+  "travelHistory": [
+    {
+      "date": "Friday, 7/24/26",
+      "events": [
+        { "time": "12:00 AM", "status": "Picked up", "location": "CAROL STREAM, IL" },
+        { "time": "2:52 PM", "status": "Shipment information sent to FedEx", "location": "" },
+        { "time": "6:16 PM", "status": "Arrived at FedEx location", "location": "CAROL STREAM, IL" },
+        { "time": "8:08 PM", "status": "Left FedEx origin facility", "location": "CAROL STREAM, IL" },
+        { "time": "10:39 PM", "status": "Arrived at FedEx location", "location": "LA GRANGE, IL" }
+      ]
+    },
+    {
+      "date": "Monday, 7/27/26",
+      "events": [
+        { "time": "6:17 AM", "status": "At local FedEx facility", "location": "LA GRANGE, IL" },
+        { "time": "6:30 AM", "status": "On FedEx vehicle for delivery", "location": "LA GRANGE, IL" },
+        { "time": "11:12 AM", "status": "Delivered", "location": "Oak Brook, IL", "isDelivered": true }
+      ]
+    }
+  ],
+  "shipmentFacts": {
+    "overview": {
+      "trackingNumber": "382803860875",
+      "shipDate": "7/24/2026",
+      "standardTransit": "7/27/2026",
+      "delivered": "7/27/2026 at 11:12 am"
+    },
+    "services": {
+      "service": "FedEx Ground",
+      "terms": "Shipper"
+    },
+    "packageDetails": {
+      "weight": "2.5 lbs / 1.13 kgs",
+      "dimensions": "11x9x3 in.",
+      "totalPieces": 1,
+      "packaging": "Package"
+    }
+  }
+}

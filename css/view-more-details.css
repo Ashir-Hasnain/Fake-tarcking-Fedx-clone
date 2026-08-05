@@ -1,0 +1,159 @@
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 110px auto;
+}
+
+/* Section Titles & Headers */
+.section-title {
+  font-size: 26px;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.sub-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.sub-section-header svg {
+  width: 22px;
+  height: 22px;
+  fill: #4d148c;
+}
+
+/* Travel History Styles */
+.travel-history {
+  margin-bottom: 40px;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 13px;
+  color: #007ab8;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.timeline-group {
+  margin-bottom: 24px;
+}
+
+.date-row {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 100px 30px 1fr 180px;
+  align-items: center;
+  font-size: 12px;
+  color: #333;
+  padding: 8px 0;
+}
+
+.time {
+  color: #666;
+  text-align: right;
+  padding-right: 12px;
+}
+
+.status-dot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+.dot.delivered {
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border: 2px solid #4d148c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot.delivered::after {
+  content: '→';
+  font-size: 10px;
+  color: #4d148c;
+  font-weight: bold;
+}
+
+.location {
+  text-align: right;
+  color: #333;
+}
+
+.divider {
+  border-bottom: 1px solid #e6e6e6;
+  margin: 30px 0;
+}
+
+/* Data Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.data-table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.data-table td {
+  padding: 10px 14px;
+  font-size: 12px;
+}
+
+.data-table td.label {
+  width: 40%;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.data-table td.value {
+  width: 60%;
+  color: #333;
+}
+
+.info-icon {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #007ab8;
+  color: #007ab8;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 11px;
+  font-size: 9px;
+  margin-left: 4px;
+  cursor: pointer;
+}
