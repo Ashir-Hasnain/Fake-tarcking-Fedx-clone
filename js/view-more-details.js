@@ -28,16 +28,19 @@ function renderTimeline(history) {
   container.innerHTML = history.map(group => `
     <div class="timeline-group">
       <div class="date-row">${group.date}</div>
-      ${group.events.map(event => `
-        <div class="timeline-item">
-          <div class="time">${event.time}</div>
-          <div class="status-dot-container">
-            <div class="dot ${event.isDelivered ? 'delivered' : ''}"></div>
+      ${group.events.map(event => {
+        const locationHtml = event.location ? `<div class="location">${event.location}</div>` : '';
+        return `
+          <div class="timeline-item">
+            <div class="time">${event.time}</div>
+            <div class="status-dot-container">
+              <div class="dot ${event.isDelivered ? 'delivered' : ''}"></div>
+            </div>
+            <div class="status-desc">${event.isDelivered ? `<strong>${event.status}</strong>` : event.status}</div>
+            ${locationHtml}
           </div>
-          <div class="status-desc">${event.isDelivered ? `<strong>${event.status}</strong>` : event.status}</div>
-          <div class="location">${event.location}</div>
-        </div>
-      `).join('')}
+        `;
+      }).join('')}
     </div>
   `).join('');
 }
@@ -47,28 +50,30 @@ function renderTables(facts) {
   const servicesTable = document.getElementById('table-services');
   const packageTable = document.getElementById('table-package');
 
+  const makeRow = (label, value) => value ? `<tr><td class="label">${label}</td><td class="value">${value}</td></tr>` : '';
+
   if (overviewTable) {
-    overviewTable.innerHTML = `
-      <tr><td class="label">TRACKING NUMBER</td><td class="value">${facts.overview.trackingNumber}</td></tr>
-      <tr><td class="label">SHIP DATE <span class="info-icon">?</span></td><td class="value">${facts.overview.shipDate}</td></tr>
-      <tr><td class="label">STANDARD TRANSIT <span class="info-icon">?</span></td><td class="value">${facts.overview.standardTransit}</td></tr>
-      <tr><td class="label">DELIVERED <span class="info-icon">?</span></td><td class="value">${facts.overview.delivered}</td></tr>
-    `;
+    overviewTable.innerHTML = [
+      makeRow('TRACKING NUMBER', facts.overview.trackingNumber),
+      makeRow('SHIP DATE', facts.overview.shipDate),
+      makeRow('STANDARD TRANSIT', facts.overview.standardTransit),
+      makeRow('DELIVERED', facts.overview.delivered)
+    ].join('');
   }
 
   if (servicesTable) {
-    servicesTable.innerHTML = `
-      <tr><td class="label">SERVICE</td><td class="value">${facts.services.service}</td></tr>
-      <tr><td class="label">TERMS</td><td class="value">${facts.services.terms}</td></tr>
-    `;
+    servicesTable.innerHTML = [
+      makeRow('SERVICE', facts.services.service),
+      makeRow('TERMS', facts.services.terms)
+    ].join('');
   }
 
   if (packageTable) {
-    packageTable.innerHTML = `
-      <tr><td class="label">WEIGHT</td><td class="value">${facts.packageDetails.weight}</td></tr>
-      <tr><td class="label">DIMENSIONS</td><td class="value">${facts.packageDetails.dimensions}</td></tr>
-      <tr><td class="label">TOTAL PIECES</td><td class="value">${facts.packageDetails.totalPieces}</td></tr>
-      <tr><td class="label">PACKAGING</td><td class="value">${facts.packageDetails.packaging}</td></tr>
-    `;
+    packageTable.innerHTML = [
+      makeRow('WEIGHT', facts.packageDetails.weight),
+      makeRow('DIMENSIONS', facts.packageDetails.dimensions),
+      makeRow('TOTAL PIECES', facts.packageDetails.totalPieces),
+      makeRow('PACKAGING', facts.packageDetails.packaging)
+    ].join('');
   }
 }

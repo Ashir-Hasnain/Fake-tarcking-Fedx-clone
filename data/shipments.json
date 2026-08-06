@@ -1,21 +1,19 @@
 {
   "travelHistory": [
     {
-      "date": "Friday, 7/24/26",
+      "date": "Thursday, 7/30/26",
       "events": [
-        { "time": "12:00 AM", "status": "Picked up", "location": "CAROL STREAM, IL" },
-        { "time": "2:52 PM", "status": "Shipment information sent to FedEx", "location": "" },
-        { "time": "6:16 PM", "status": "Arrived at FedEx location", "location": "CAROL STREAM, IL" },
-        { "time": "8:08 PM", "status": "Left FedEx origin facility", "location": "CAROL STREAM, IL" },
-        { "time": "10:39 PM", "status": "Arrived at FedEx location", "location": "LA GRANGE, IL" }
+        { "time": "12:00 AM", "status": "Picked up", "location": "Dallas, TX" },
+        { "time": "2:52 PM", "status": "Shipment information sent to FedEx", "location": "Dallas, TX" },
+        { "time": "6:16 PM", "status": "Arrived at FedEx location", "location": "Dallas, TX" },
+        { "time": "", "status": "Left FedEx origin facility", "location": "" },
+        { "time": "", "status": "Arrived at FedEx location", "location": "" }
       ]
     },
     {
-      "date": "Monday, 7/27/26",
+      "date": "",
       "events": [
-        { "time": "6:17 AM", "status": "At local FedEx facility", "location": "LA GRANGE, IL" },
-        { "time": "6:30 AM", "status": "On FedEx vehicle for delivery", "location": "LA GRANGE, IL" },
-        { "time": "11:12 AM", "status": "Delivered", "location": "Oak Brook, IL", "isDelivered": true }
+        { "time": "", "status": "In process", "location": "Dallas, TX", "isDelivered": false }
       ]
     }
   ],
